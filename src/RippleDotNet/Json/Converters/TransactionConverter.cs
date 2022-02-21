@@ -53,6 +53,11 @@ namespace RippleDotNet.Json.Converters
                     return new SetFeeTransactionResponse();
                 case "AccountDelete":
                     return new AccountDeleteTransactionResponse();
+                case "NFTokenMint":
+                    return new NFTokenMintTransactionResponse();
+                case "NFTokenCreateOffer":
+                    return new NFTokenCreateOfferResponse();
+
             }
             throw new Exception("Can't create transaction type" + transactionType);
         }

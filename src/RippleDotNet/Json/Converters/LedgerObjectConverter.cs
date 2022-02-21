@@ -38,6 +38,10 @@ namespace RippleDotNet.Json.Converters
                     return new RippleStateLedgerObject();
                 case "SignerList":
                     return new SignerListLedgerObject();
+                case "NFTokenPage":
+                    return new NFTokenPageLedgerObject();
+                case "NFTokenOffer":
+                    return new NFTokenOfferLedgerObject();
             }
             throw new Exception("Can't create ledger type" + ledgerEntryType);
         }

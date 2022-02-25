@@ -196,14 +196,18 @@ namespace RippleDotNet
 
         private async void DisconnectAsync()
         {
-            if (_ws != null)
+            try
             {
-                if (_ws.State != WebSocketState.Open)
-                    await _ws.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None);
-                _ws.Dispose();
-                _ws = null;
-                CallOnDisconnected();
+                if (_ws != null)
+                {
+                    if (_ws.State != WebSocketState.Open)
+                        await _ws.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None);
+                    _ws.Dispose();
+                    _ws = null;
+                    CallOnDisconnected();
+                }
             }
+            catch (Exception) { }
         }
 
         private async void StartListen()

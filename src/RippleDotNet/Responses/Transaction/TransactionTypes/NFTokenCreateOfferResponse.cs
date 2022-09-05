@@ -8,7 +8,7 @@ namespace RippleDotNet.Responses.Transaction.TransactionTypes
     public class NFTokenCreateOfferResponse : TransactionResponseCommon, INFTokenCreateOfferTransaction
     {
         public string Owner { get; set; }
-        public string TokenID { get; set; }
+        public string NFTokenID { get; set; }
         public uint? Expiration { get; set; }
         public string Destination { get; set; }
     }

@@ -13,7 +13,7 @@ namespace RippleDotNet.Model.Transaction.TransactionTypes
         }
         public new NFTokenCreateOfferFlags? Flags { get; set; }
         public string Owner { get; set; }
-        public string TokenID { get; set; }
+        public string NFTokenID { get; set; }
         public uint? Expiration { get; set; }
         public string Destination { get; set; }
     }
